@@ -9,9 +9,9 @@ class Account {
 	private String description;
 	private double balance;
 	private static int accountAssigner = 1;
- 	private int depositCounter = 0;
- 	private int withdrawCounter = 0;
- 	private int transactionCounter = 0;
+// 	private int depositCounter = 0;
+// 	private int withdrawCounter = 0;
+// 	private int transactionCounter = 0;
 //	private ArrayList<Double> balanceHistory = new ArrayList<Double>();
 //	private int i = 0;
 //	private Mainline getAccountType = new Mainline();
@@ -20,14 +20,14 @@ class Account {
 	
 	//Standard Constructor
 	public Account() {
-		System.out.println("Creating new Account");
+//		System.out.println("Creating new Account");
 		this.setId(accountAssigner); 
 		accountAssigner++;
 		this.setBalance(0);
 	}
 	//Description Constructor
 	public Account(String aDescription) {
-		System.out.println("Creating new Account");
+//		System.out.println("Creating new Account");
 		this.setId(accountAssigner); 
 		accountAssigner++;
 		description = aDescription;
@@ -35,14 +35,17 @@ class Account {
 	}
 	//ID and Description Constructor
 	public Account(int aId, String aDescription) {
-		System.out.println("Creating new Account");
+//		if (aId < (accountAssigner-1)) {
+//			System.out.println("Account ID already in use, choose larger number");
+//		} else {
+//		System.out.println("Creating new Account");
 		this.setId(aId);
 		description = aDescription;
-		this.setBalance(0);
-	}
+		this.setBalance(0); }
+//	}
 	//Balance Constructor
 	public Account(double aBalance) {
-		System.out.println("Creating new Account");
+//		System.out.println("Creating new Account");
 		this.setBalance(aBalance);
 		this.setId(accountAssigner); 
 		accountAssigner++;	
@@ -80,9 +83,9 @@ class Account {
 //		balanceHistory.add(balance);
 //		i++;
 		balance += aDeposit;
- 		depositCounter++;
- 		transactionCounter++;
- 		System.out.println("That was account " + id + "'s deposit number " + depositCounter + ", and transaction number " + transactionCounter);
+// 		depositCounter++;
+// 		transactionCounter++;
+//		System.out.println("That was Account " + id + "'s Deposit number " + depositCounter + ", and Transaction number " + transactionCounter);
 		return balance;
 		}
 	}
@@ -90,21 +93,21 @@ class Account {
 	public double withdraw(double aWithdraw) {
 		
 		if ((balance - aWithdraw) < 0) {
-			System.out.println("Insufficient funds!");
+//			System.out.println("Insufficient funds!");
 			return 0;
 		} else {
 //		balanceHistory.add(balance);
 //		i++;
 		balance -= aWithdraw;
- 		withdrawCounter++;
- 		transactionCounter++;
- 		System.out.println("That was account " + id + "'s withdrawal number " + withdrawCounter + ", and transaction number " + transactionCounter);
+// 		withdrawCounter++;
+// 		transactionCounter++;
+// 		System.out.println("That was Account " + id + "'s Withdrawal number " + withdrawCounter + ", and Transaction number " + transactionCounter);
 		}
 		return balance;
 	}
 	public String print() {
 		DecimalFormat decimalBalance = new DecimalFormat("000.00");
-		return ("Account " + id + " balance is $" + decimalBalance.format(balance));
+		return ("Account " + id + " Balance is $" + decimalBalance.format(balance));
 	}
 	public void transferFrom(Account account, double amount) {
 		this.deposit(amount);
