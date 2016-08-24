@@ -15,7 +15,7 @@ class Account {
 //	private ArrayList<Double> balanceHistory = new ArrayList<Double>();
 //	private int i = 0;
 //	private Mainline getAccountType = new Mainline();
-//	private String accountType = getAccountType.accountTypeIn;
+//	private String accountType = Mainline.accountTypeIn;
 	
 	
 	//Standard Constructor
@@ -77,7 +77,8 @@ class Account {
 
 	public double deposit(double aDeposit) {
 		
-		if (aDeposit == 0) {
+		if (aDeposit <= 0) {
+			System.out.println("Invalid deposit amount: Must be positive");
 			return 0;
 		} else {
 //		balanceHistory.add(balance);
@@ -85,15 +86,18 @@ class Account {
 		balance += aDeposit;
 // 		depositCounter++;
 // 		transactionCounter++;
-//		System.out.println("That was Account " + id + "'s Deposit number " + depositCounter + ", and Transaction number " + transactionCounter);
+//		System.out.println("That was Account " + accountType + id + "'s Deposit number " + depositCounter + ", and Transaction number " + transactionCounter);
 		return balance;
 		}
 	}
 	
 	public double withdraw(double aWithdraw) {
 		
+		if (aWithdraw <= 0) {
+			System.out.println("Must withdraw positive amount.");
+		} else {
 		if ((balance - aWithdraw) < 0) {
-//			System.out.println("Insufficient funds!");
+			System.out.println("Insufficient funds!");
 			return 0;
 		} else {
 //		balanceHistory.add(balance);
@@ -102,6 +106,7 @@ class Account {
 // 		withdrawCounter++;
 // 		transactionCounter++;
 // 		System.out.println("That was Account " + id + "'s Withdrawal number " + withdrawCounter + ", and Transaction number " + transactionCounter);
+		}
 		}
 		return balance;
 	}

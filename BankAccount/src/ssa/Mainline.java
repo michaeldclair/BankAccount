@@ -6,11 +6,12 @@ public class Mainline {
 //	static int depositCounter = 0;
 //	static int withdrawCounter = 0;
 //	static int transactionCounter = 0;
-//	static String accountTypeIn;
+	static String accountTypeIn;
 
 	public static void main(String[] args) {
 			
 		// create checking1 - default constructor
+		accountTypeIn="checking";
 		Account checking1 = new Account();
 //		      checking1.id = 10;
 //		      checking1.balance = 1.00;
@@ -63,10 +64,20 @@ public class Mainline {
 		// total should be 6.06;
 		System.out.printf("Total all accounts is %.2f\n", checking1.getBalance() + checking2.getBalance() + savings3.getBalance());
 		
-		//Prints totals
-		
 
+		Savings savings = new Savings();
+		savings.deposit(500.00);
+		savings.setMinBalance(400.00);
+		System.out.println(savings.getBalance());
+		savings.setInterestRate("1.5%");
+		savings.calcDepositInterest(4);
+		System.out.println(savings.print());
+		System.out.println(savings.getBalance());
 		
+		
+		
+		
+		//Prints totals
 //		System.out.println("Total Deposits    : " + (checking1.getDepositCounter() + savings1.getDepositCounter()) + 
 //												" (" + checking1.getDepositCounter() + " from Checking, "	+
 //		                                         savings1.getDepositCounter() + " from Savings)");
