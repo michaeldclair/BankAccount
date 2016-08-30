@@ -1,9 +1,9 @@
 package ssa;
-//adding arbitrary comment for GitHub
+
 import java.text.DecimalFormat;
 //import java.util.*;
 
-class Account {
+public class Account {
 
 	private int id;
 	private String description;
@@ -54,7 +54,7 @@ class Account {
 	
 		//Getters and Setters
 	
-	private void setId(int aId) {
+	public void setId(int aId) {
 		id = aId;
 	}
 	public int getId() {
@@ -66,7 +66,7 @@ class Account {
 	public String getDescription() {
 		return description;
 	}
-	private void setBalance(double balanceBeingSet) {
+	public void setBalance(double balanceBeingSet) {
 		balance = balanceBeingSet;
 	}
 	public double getBalance() {

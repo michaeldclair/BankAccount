@@ -1,5 +1,7 @@
 package ssa;
 
+import java.text.DecimalFormat;
+
 public class Savings extends Account {
 
 	double interestRate;
@@ -15,7 +17,8 @@ public class Savings extends Account {
 		super(aId, aDescription);
 	}
 	public String print(){
-		return super.print() + ". Interest Accumulated is $" + this.getInterestAccumulated();
+		DecimalFormat df = new DecimalFormat("#.00");
+		return super.print() + ". Interest Accumulated is $" + df.format(this.getInterestAccumulated());
 	}
 	
 	public double getInterestRate() {
